@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dank  Game.Plugins", "Dank  Game.Plugins.csproj", "{C66A0B81-9E91-8127-0FB8-31376FF76055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dank  Game", "Dank  Game.csproj", "{1E7CA48E-C421-93C6-081C-D9CFD07CE247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dank  Game.Editor.Plugins", "Dank  Game.Editor.Plugins.csproj", "{CC5DE83D-C951-CA42-16D0-85FF05BD41A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C66A0B81-9E91-8127-0FB8-31376FF76055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66A0B81-9E91-8127-0FB8-31376FF76055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66A0B81-9E91-8127-0FB8-31376FF76055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66A0B81-9E91-8127-0FB8-31376FF76055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7CA48E-C421-93C6-081C-D9CFD07CE247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7CA48E-C421-93C6-081C-D9CFD07CE247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7CA48E-C421-93C6-081C-D9CFD07CE247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7CA48E-C421-93C6-081C-D9CFD07CE247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC5DE83D-C951-CA42-16D0-85FF05BD41A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5DE83D-C951-CA42-16D0-85FF05BD41A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5DE83D-C951-CA42-16D0-85FF05BD41A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5DE83D-C951-CA42-16D0-85FF05BD41A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
