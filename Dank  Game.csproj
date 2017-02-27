@@ -87,25 +87,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Camera Scripts\Scripts\CameraScripts\FollowTarget.cs" />
-    <Compile Include="Assets\Camera Scripts\Scripts\CameraScripts\FreeCameraLook.cs" />
-    <Compile Include="Assets\Camera Scripts\Scripts\CameraScripts\Perlin.cs" />
-    <Compile Include="Assets\Camera Scripts\Scripts\CameraScripts\Pivot.cs" />
-    <Compile Include="Assets\Camera Scripts\Scripts\CameraScripts\ShakeCamera.cs" />
-    <Compile Include="Assets\Camera Scripts\Scripts\Crosshair.cs" />
-    <Compile Include="Assets\Camera Scripts\Scripts\CrosshairManager.cs" />
-    <Compile Include="Assets\OBJExport\OBJExporter.cs" />
-    <Compile Include="Assets\SimpleMilitary\Scripts\CameraHolderDirection.cs" />
-    <Compile Include="Assets\SimpleMilitary\Scripts\DankAnimatorController.cs" />
-    <Compile Include="Assets\SimpleMilitary\Scripts\DankCameraController.cs" />
-    <Compile Include="Assets\SimpleMilitary\Scripts\DankCharacterController.cs" />
-    <Compile Include="Assets\SimpleMilitary\Scripts\DankWeaponManager.cs" />
-    <Compile Include="Assets\SimpleMilitary\Scripts\FPSWalkerEnhanced.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\CameraScripts\FollowTarget.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\CameraScripts\FreeCameraLook.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\CameraScripts\Perlin.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\CameraScripts\Pivot.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\CameraScripts\ShakeCamera.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\Crosshair.cs" />
+    <Compile Include="Assets\Assets\Camera Scripts\Scripts\CrosshairManager.cs" />
+    <Compile Include="Assets\Assets\OBJExport\OBJExporter.cs" />
+    <Compile Include="Assets\Assets\SimpleMilitary\Scripts\CameraHolderDirection.cs" />
+    <Compile Include="Assets\Assets\SimpleMilitary\Scripts\FPSWalkerEnhanced.cs" />
+    <Compile Include="Assets\Assets\SimpleMilitary\Scripts\pressspacetoshot.cs" />
+    <Compile Include="Assets\DankGame\Player\Scripts\DankAnimatorController.cs" />
+    <Compile Include="Assets\DankGame\Player\Scripts\DankCameraController.cs" />
+    <Compile Include="Assets\DankGame\Player\Scripts\DankCharacterController.cs" />
+    <Compile Include="Assets\DankGame\Player\Scripts\DankPlayerProperties.cs" />
+    <Compile Include="Assets\DankGame\Player\Scripts\DankWeaponManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\SimpleMilitary\Changelog.txt" />
-    <None Include="Assets\SimpleMilitary\Materials\UnlitVertexColour_Alpha.shader" />
-    <None Include="Assets\SimpleMilitary\ReadMe.txt" />
+    <None Include="Assets\Assets\SimpleMilitary\Changelog.txt" />
+    <None Include="Assets\Assets\SimpleMilitary\Materials\UnlitVertexColour_Alpha.shader" />
+    <None Include="Assets\Assets\SimpleMilitary\ReadMe.txt" />
+    <None Include="Assets\DankGame\Enemies\Readme.txt" />
+    <None Include="Assets\DankGame\Map\Readme.txt" />
+    <None Include="Assets\DankGame\Menu\Readme.txt" />
+    <None Include="Assets\DankGame\Player\Readme.txt" />
+    <None Include="Assets\DankGame\Readme.txt" />
+    <None Include="Assets\DankGame\Ressources\Readme.txt" />
+    <None Include="Assets\DankGame\Weapons\Readme.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
