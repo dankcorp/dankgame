@@ -19,7 +19,7 @@ public class DankCharacterController : MonoBehaviour
 
     private DankPlayerProperties player;
     private DankAnimatorController animator;
-    public Vector3 jumpPosition = new Vector3(0, 3, 0);
+
 
     void Start()
     {
@@ -39,7 +39,6 @@ public class DankCharacterController : MonoBehaviour
     {
       
         RotationMouseMovement();
-        aim();
           
        move();
         
@@ -50,14 +49,19 @@ public class DankCharacterController : MonoBehaviour
     public Vector3 posSaut = new Vector3(0,0,0);
     public float smoothTime = 0.9F;
 
+
+
     private void move()
     {
         moveVertical = Input.GetAxis("Vertical"); //forwardinput
         moveHorizontal = Input.GetAxis("Horizontal"); //turniput
+
         if(moveVertical > 0)
         {
             player.walk = true;
         }
+
+        player.aim = Input.GetKey(KeyCode.Mouse1);
 
         moveDirection = new Vector3(moveHorizontal, 0, moveVertical);
         moveDirection = transform.TransformDirection(moveDirection);
@@ -90,6 +94,7 @@ public class DankCharacterController : MonoBehaviour
         Debug.Log(player.shot);
         if(player.shot)
         {
+            player.aim = true;
             shoot();
         }
 
@@ -104,10 +109,7 @@ public class DankCharacterController : MonoBehaviour
         }
     }
 
-    void aim()
-    {
-        player.aim = Input.GetKey(KeyCode.Mouse1);
-    }
+
 
 
     void RotationMouseMovement()

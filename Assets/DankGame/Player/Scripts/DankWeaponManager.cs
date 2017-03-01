@@ -10,10 +10,15 @@ public class DankWeaponManager : MonoBehaviour {
     public GameObject shootWeapon;
     public GameObject handWeapon;
     private GameObject weapon;
+    public DankPlayerProperties player;
+    private Animator weaponAnimator;
+
     public bool fps;
 
     void Start () {
         weapon = handWeapon;
+        player = this.GetComponent<DankPlayerProperties>();
+        weaponAnimator = shootWeapon.GetComponent<Animator>();
     }
 
     public int getWeaponType()
@@ -25,7 +30,8 @@ public class DankWeaponManager : MonoBehaviour {
     {
         
         
-        isAiming = Input.GetMouseButton(1) || fps;
+        isAiming = player.aim || fps;
+
         if(isAiming)
         {
             weapon = shootWeapon;
@@ -54,6 +60,15 @@ public class DankWeaponManager : MonoBehaviour {
 
         aim();
         changeWeapon();
+
+        if (isAiming) {
+
+            weaponAnimator.SetInteger("WeaponType_int", weaponType);
+            weaponAnimator.SetBool("Shoot_b", player.shot);
+        }
+        
+
+        
 	}
 
     public void changeWeapon()

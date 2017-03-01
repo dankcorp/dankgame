@@ -48,6 +48,6 @@ public class DankAnimatorController : MonoBehaviour {
         Debug.Log(weaponType);
 
         
-        animator.SetInteger("WeaponType_int", weaponType);
+       animator.SetInteger("WeaponType_int", weaponType);
     }
 }
