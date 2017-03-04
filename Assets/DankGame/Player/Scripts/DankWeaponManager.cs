@@ -13,65 +13,58 @@ public class DankWeaponManager : MonoBehaviour {
     public DankPlayerProperties player;
     private Animator weaponAnimator;
 
+    public GameObject spawnPoint;
+    private float nextfire = Time.time;
+    private float cool = 0.5f;
+    private Rigidbody projectile;
+    public Rigidbody projectilePrefab;
+    public Rigidbody RPG;
+
+    public int ejectSpeed;
+
+
     public bool fps;
 
     void Start () {
         weapon = handWeapon;
         player = this.GetComponent<DankPlayerProperties>();
         weaponAnimator = shootWeapon.GetComponent<Animator>();
+        projectile = projectilePrefab;
     }
 
-    public int getWeaponType()
-    {
-        return weaponType;
-    }
- 
-    public void aim()
-    {
-        
-        
-        isAiming = player.aim || fps;
-
-        if(isAiming)
-        {
-            weapon = shootWeapon;
-            handWeapon.SetActive(false);
-        } else
-        {
-            weapon = handWeapon;
-            shootWeapon.SetActive(false);
-        }
-
-        weapon.SetActive(true);
-        
-    }
-
-    private void setChildrenOff(GameObject gameObject)
-    {
-        foreach (Transform child in gameObject.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-
-    }
+    
 
 
     void Update () {
 
         aim();
-        changeWeapon();
+        ChangeWeapon();
 
         if (isAiming) {
 
             weaponAnimator.SetInteger("WeaponType_int", weaponType);
             weaponAnimator.SetBool("Shoot_b", player.shot);
         }
-        
 
-        
-	}
+        if (Input.GetButton("Fire1") && Time.time >= nextfire)
+        {
+            Shoot();
+        }
 
-    public void changeWeapon()
+
+    }
+
+
+    public void Shoot()
+    {
+        Rigidbody bullet;
+        bullet = Instantiate(projectile, spawnPoint.transform.position, spawnPoint.transform.rotation) as Rigidbody;
+        bullet.velocity = transform.TransformDirection(Vector3.forward * ejectSpeed);
+        nextfire = Time.time + cool;
+    }
+
+
+    public void ChangeWeapon()
     {
         setChildrenOff(weapon);
       
@@ -79,14 +72,20 @@ public class DankWeaponManager : MonoBehaviour {
         if (Input.GetKey(KeyCode.Alpha1))
         {
             weaponType = 1;
+            cool = 0.5f;
+            projectile = projectilePrefab;
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
             weaponType = 2;
+            cool = 0.1f;
+            projectile = projectilePrefab;
         }
         else if (Input.GetKey(KeyCode.Alpha3))
         {
             weaponType = 3;
+            projectile = RPG;
+            cool = 2f;
         }
         else if (Input.GetKey(KeyCode.Alpha4))
         {
@@ -120,6 +119,42 @@ public class DankWeaponManager : MonoBehaviour {
      
 
         weapon.gameObject.transform.GetChild(weaponType).gameObject.SetActive(true);
+
+    }
+
+
+    public int getWeaponType()
+    {
+        return weaponType;
+    }
+
+    public void aim()
+    {
+
+
+        isAiming = player.aim || fps;
+
+        if (isAiming)
+        {
+            weapon = shootWeapon;
+            handWeapon.SetActive(false);
+        }
+        else
+        {
+            weapon = handWeapon;
+            shootWeapon.SetActive(false);
+        }
+
+        weapon.SetActive(true);
+
+    }
+
+    private void setChildrenOff(GameObject gameObject)
+    {
+        foreach (Transform child in gameObject.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
 
     }
 }
