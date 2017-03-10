@@ -32,12 +32,13 @@ public class DankAnimatorController : MonoBehaviour {
 	void Update () {
 
         speed = charController.velocity.magnitude;
+        player.speed = speed;
 
         if (player.aim)
         {
             weaponType = weaponManager.getWeaponType();
             animator.SetBool("Shoot_b", player.shot);
-            
+            animator.SetFloat("Speed_f", 0);
         }
         else
         {

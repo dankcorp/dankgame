@@ -11,6 +11,7 @@ public class DankPlayerProperties : MonoBehaviour {
     public float jumpSpeed;
     public float gravity;
 
+    public float speed;
     public bool walk;
     public bool run; 
     public bool grounded;

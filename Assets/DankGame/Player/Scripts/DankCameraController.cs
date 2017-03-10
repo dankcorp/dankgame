@@ -8,8 +8,10 @@ public class DankCameraController : MonoBehaviour {
     public float lookSmooth = 0.09f;
     public Vector3 TPSCameraPosition = new Vector3(0, 0, 0);
     public Vector3 TPSZoomCameraPosition = new Vector3(0, 2, 1);
-
     public Vector3 FPSCameraPosition = new Vector3(0, 2, 1);
+
+    private Vector3 cameraEffective = Vector3.zero;
+
     public bool mode = true; // true for TPS, false for FPS 
     Vector3 targetPosition;
     private float tiltAngle;
@@ -24,6 +26,7 @@ public class DankCameraController : MonoBehaviour {
     private float turnSpeed = 1.5f;
     public float tiltMax = 75f;
     public float tiltMin = 45f;
+    private float headMove = 0;
 
     public GameObject player;
     DankPlayerProperties playerproperties;
@@ -45,29 +48,31 @@ public class DankCameraController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.F))
             mode = !mode;
 
+        headMove = Mathf.Sin(playerproperties.speed * Time.realtimeSinceStartup * 3) / 10;
+
         if (mode)
         {
             if (Input.GetMouseButton(1))
             {
-                targetPosition = target.TransformPoint(TPSZoomCameraPosition);
-                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+                cameraEffective = TPSZoomCameraPosition + new Vector3(0, headMove, 0);
             }
             else
             {
-                targetPosition = target.TransformPoint(TPSCameraPosition);
-                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+                cameraEffective = TPSCameraPosition + new Vector3(0, headMove, 0);
             }
-
         } else
         {
-
-            targetPosition = target.TransformPoint(FPSCameraPosition);
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+           
+            cameraEffective = FPSCameraPosition + new Vector3(0, headMove, 0);
+       
         }
 
-        
+        targetPosition = target.TransformPoint(cameraEffective);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
-      
+       
+
+
 
     }
 
